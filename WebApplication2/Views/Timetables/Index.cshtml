@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplication2.Models.Timetable>
+
+@{
+    ViewBag.Title = "TimeTable";
+}
+<br />
+<br />
+<br />
+<p>
+    @Html.ActionLink("Create New Timetable", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.room)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.classDuration)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.room)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.classDuration)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.timeTableId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.timeTableId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.timeTableId })
+            </td>
+        </tr>
+    }
+
+</table>

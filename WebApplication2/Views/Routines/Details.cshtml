@@ -1,0 +1,45 @@
+﻿@model WebApplication2.Models.Routine
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br />
+<br />
+<br />
+<h2>Details</h2>
+
+<div>
+    <h4>Routine</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassFK.ClassName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassFK.ClassName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.courseFK.courseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.courseFK.courseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.timetableFK.time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.timetableFK.time)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

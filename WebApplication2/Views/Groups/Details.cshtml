@@ -1,0 +1,45 @@
+﻿@model WebApplication2.Models.Groups
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br />
+<br />
+<br />
+<h2>Details</h2>
+
+<div>
+    <h4>Groups</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.facultyCodeFK.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.facultyCodeFK.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.studentCode.StudentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.studentCode.StudentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GroupId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

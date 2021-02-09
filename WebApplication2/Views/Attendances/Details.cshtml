@@ -1,0 +1,61 @@
+﻿@model WebApplication2.Models.Attendance
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br />
+<br />
+<br />
+<h2>Details</h2>
+
+<div>
+    <h4>Attendance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.courseCodeFK.courseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.courseCodeFK.courseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stu.StudentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stu.StudentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimetableIdFK.room)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimetableIdFK.room)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AttendDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AttendDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.attendenceRemark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.attendenceRemark)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.attendenceId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

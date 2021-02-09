@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="~/Content/dist/modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/dist/modules/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/Content/dist/modules/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/Content/dist/modules/summernote/summernote-lite.css">
+    <link rel="stylesheet" href="~/Content/dist/modules/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="~/Content/dist/css/demo.css">
+    <link rel="stylesheet" href="~/Content/dist/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="main-wrapper">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar">
+                <form class="form-inline mr-auto">
+
+                    <ul class="navbar-nav navbar-left">
+
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
+                                <i class="ion ion-android-person d-lg-none"></i>
+                                <div class="d-sm-none d-lg-inline-block"><i class="ion ion-android-menu"></i></div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-left">
+                                <a href="#" class="dropdown-item has-icon">
+                                    <i class="ion ion-android-create"></i>
+                                    Register
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+                <ul class="navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
+                            <i class="ion ion-android-person d-lg-none"></i>
+                            <div class="d-sm-none d-lg-inline-block">Hi, Islington College</div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="@Url.Action("LogOff","Account")" class="dropdown-item has-icon">
+                                <i class="ion ion-log-out"></i> Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="main-sidebar">
+                <aside id="sidebar-wrapper">
+                    <div class="sidebar-brand">
+                        <a>Attendance System</a>
+                    </div>
+                    <div class="sidebar-user">
+                        <div class="sidebar-user-picture">
+                            <a href="@Url.Action("Index","Home")"><img alt="image" src="~/Content/dist/img/avatar/Islington-College-Logo.png"></a>
+                        </div>
+                        <div class="sidebar-user-details">
+                            <div class="user-name">Islington College</div>
+                            <div class="user-role">
+                                Administrator
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li class="menu-header">Dashboard</li>
+                        <li class="active">
+                            <a href="@Url.Action("Index","Home")"><i class="ion ion-speedometer"></i><span>Dashboard</span></a>
+                        </li>
+                        <li class="menu-header">System Details</li>
+                        <li>
+                            <a href="Students" class="has-dropdown"><i class="ion ion-ios-albums"></i><span>Admission</span></a>
+                            <ul class="menu-dropdown">
+                                <li><a href="@Url.Action("Create","Students")"><i class="ion ion-person-add"></i> Enroll Students</a></li>
+                                <li><a href="@Url.Action("Create","Groups")"><i class="ion ion-android-people"></i> Assign Group</a></li>
+                                <li><a href="@Url.Action("Create","StudentFaculties")"><i class="ion ion-ios-albums"></i> Assign Faculty</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="has-dropdown"><i class="ion ion-stats-bars"></i><span>Faculty</span></a>
+                            <ul class="menu-dropdown">
+                                <li><a href="@Url.Action("Create","Faculties")"><i class="ion ion-ios-book"></i>New Faculty</a></li>
+                                <li><a href="@Url.Action("Index","Faculties")"><i class="ion ion-ios-bookmarks"></i>View Faculty</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="Students" class="has-dropdown"><i class="ion ion-person"></i><span>Students</span></a>
+                            <ul class="menu-dropdown">
+                                <li><a href="@Url.Action("Index","Students")"><i class="ion ion-android-list"></i>Students Details</a></li>
+                                <li><a href="@Url.Action("Index","StudentCourses")"><i class="ion ion-ios-book"></i>Students Course</a></li>
+                                <li><a href="@Url.Action("Index","TeacherStudents")"><i class="ion ion-ios-book"></i>Student-Teacher</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="has-dropdown"><i class="ion ion-android-hand"></i><span>Attendance</span></a>
+                            <ul class="menu-dropdown">
+                                <li><a href="@Url.Action("Create","Attendances")"><i class="ion ion-android-create"></i>Take Attendance</a></li>
+                                <li><a href="@Url.Action("Index","Attendances")"><i class="ion ion-ios-paper"></i>View Attendance</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="has-dropdown"><i class="ion ion-android-person"></i><span>Teachers</span></a>
+                            <ul class="menu-dropdown">
+                                <li><a href="@Url.Action("Create","Staffs")"><i class="ion ion-ios-personadd"></i>Add Teachers</a></li>
+                                <li><a href="@Url.Action("Index","Staffs")"><i class="ion ion-ios-person"></i>View Teachers</a></li>
+                                <li><a href="@Url.Action("Index","CourseTeachers")"><i class="ion ion-ios-book"></i>Teacher Assigned</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="has-dropdown"><i class="ion ion-android-list"></i><span>Timetables</span></a>
+                            <ul class="menu-dropdown">
+                                <li><a href="@Url.Action("Create","Timetables")"><i class="ion ion-ios-copy"></i>Create Timetables</a></li>
+                                <li><a href="@Url.Action("Index","Timetables")"><i class="ion ion-ios-copy"></i>View Timetable</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="has-dropdown"><i class="ion ion-android-laptop"></i><span>Courses</span></a>
+                            <ul class="menu-dropdown">
+                                <li><a href="@Url.Action("Create","Courses")"><i class="ion ion-ios-book"></i>New Course</a></li>
+                                <li><a href="@Url.Action("Create","CourseTeachers")"><i class="ion ion-ios-book"></i>Assign Course To Teacher</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="has-dropdown"><i class="ion ion-android-arrow-dropright-circle"></i><span>Class</span></a>
+                            <ul class="menu-dropdown">
+                                <li><a href="@Url.Action("Create","ClassDetails")"><i class="ion ion-ios-time"></i>Create Class</a></li>
+                                <li><a href="@Url.Action("Index","ClassDetails")"><i class="ion ion-ios-time-outline"></i>View Class</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="has-dropdown"><i class="ion ion-android-list"></i><span>Routine</span></a>
+                            <ul class="menu-dropdown">
+                                <li><a href="@Url.Action("Create","Routines")"><i class="ion ion-ios-copy-outline"></i>Create Routine</a></li>
+                                <li><a href="@Url.Action("Index","Routines")"><i class="ion ion-ios-copy-outline"></i>View Routine</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </aside>
+            </div>
+            <div class="main-content">
+                @RenderBody()
+            </div>
+            <footer class="main-footer">
+                <div class="footer-left">
+                    Islington College.<div class="bullet"></div> Design By <a href="https://www.youtube.com/watch?v=WYW1JlyUQ_g" target="_blank">Group Of C2</a>
+                </div>
+                <div class="footer-right"></div>
+            </footer>
+        </div>
+    </div>
+    <script src="~/Content/dist/modules/jquery.min.js"></script>
+    <script src="~/Content/dist/modules/popper.js"></script>
+    <script src="~/Content/dist/modules/tooltip.js"></script>
+    <script src="~/Content/dist/modules/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/dist/modules/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="~/Content/dist/modules/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
+    <script src="~/Content/dist/js/sa-functions.js"></script>
+
+    <script src="~/Content/dist/modules/chart.min.js"></script>
+    @RenderSection("scripts", required: false)
+    <script src="~/Content/dist/modules/summernote/summernote-lite.js"></script>
+    <script src="~/Content/dist/js/scripts.js"></script>
+    <script src="~/Content/dist/js/custom.js"></script>
+    <script src="~/Content/dist/js/demo.js"></script>
+
+</body>
+</html>

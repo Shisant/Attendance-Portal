@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    @foreach (var item in ViewBag.list as List<Dictionary<string, string>>)
+    {
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item["UserName"])</td>
+        <td>@Html.DisplayFor(modelItem => item["Name"])</td>
+    </tr>
+    }
+</table>

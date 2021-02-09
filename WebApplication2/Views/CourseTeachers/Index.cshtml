@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebApplication2.Models.CourseTeacher>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<br />
+<br />
+<h2>Index</h2>
+
+<p>
+    @using (Html.BeginForm())
+    {
+        <table>
+            <tr>
+                <th>
+                    @Html.ActionLink("Create New", "Create")
+                </th>
+                <th>
+                    @Html.DropDownList("courseId", null, htmlAttributes: new { @class = "form-control" })
+                </th>
+                <th><input type="submit" value="Search" /></th>
+            </tr>
+        </table>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.courseIdFk.courseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.teacherIdFK.teacherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.teacherIdFK.jobType)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.courseIdFk.courseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.teacherIdFK.teacherName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.teacherIdFK.jobType)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.courseTeacherId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.courseTeacherId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.courseTeacherId })
+            </td>
+        </tr>
+    }
+
+</table>

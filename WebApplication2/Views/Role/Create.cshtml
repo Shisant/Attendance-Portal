@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+
+{
+    @Html.Editor("UserID")
+     @Html.Editor("Email")
+      @Html.Editor("Password")
+       @Html.Editor("ConfirmPassword")
+    @Html.DropDownList("RoleID",ViewBag.drop as SelectList)
+
+<input type="submit" name="UserID" value="Create" />
+
+}

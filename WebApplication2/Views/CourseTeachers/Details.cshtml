@@ -1,0 +1,37 @@
+﻿@model WebApplication2.Models.CourseTeacher
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br />
+<br />
+<br />
+<h2>Details</h2>
+
+<div>
+    <h4>CourseTeacher</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.courseIdFk.courseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.courseIdFk.courseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.teacherIdFK.teacherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.teacherIdFK.teacherName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.courseTeacherId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
